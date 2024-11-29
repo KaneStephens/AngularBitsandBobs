@@ -1,0 +1,64 @@
+.breed-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #444;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    display: block;
+  }
+
+  &__info {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &__description {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__details {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+
+        strong {
+          font-weight: bold;
+          color: #555;
+        }
+
+        & .breed-details__temperament {
+          margin: 0.5rem 0 0 1.5rem;
+          list-style: disc;
+        }
+      }
+    }
+  }
+
+  &__loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #888;
+  }
+}

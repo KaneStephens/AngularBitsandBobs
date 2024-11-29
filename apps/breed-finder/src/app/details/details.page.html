@@ -1,0 +1,32 @@
+<div *ngIf="loading$ | async; else breedContent">
+  <p>Loading breed details...</p>
+</div>
+
+<ng-template #breedContent>
+  <div class="breed-details" *ngIf="breedDetails$ | async as breedDetails">
+    <div class="breed-details__header">
+      <h1 class="breed-details__title">{{ breedDetails.name }}</h1>
+      <img
+        class="breed-details__image"
+        [src]="breedDetails.image"
+        [alt]="'Image of ' + breedDetails.name"
+      />
+    </div>
+
+    <div class="breed-details__info">
+      <p class="breed-details__description">{{ breedDetails.description }}</p>
+
+      <ul class="breed-details__details">
+        <li><strong>Size:</strong> {{ breedDetails.size }}</li>
+        <li><strong>Origin:</strong> {{ breedDetails.origin }}</li>
+        <li><strong>Life Expectancy:</strong> {{ breedDetails.lifeExpectancy }}</li>
+        <li>
+          <strong>Temperament:</strong>
+          <ul class="breed-details__temperament">
+            <li *ngFor="let trait of breedDetails.temperament">{{ trait }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
